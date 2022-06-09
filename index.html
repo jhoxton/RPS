@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,82 @@
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
-    
+    <div class="container">
+
+        <section class="heading">
+            <h1>RPS</h1>
+        </section>
+
+        <section class="round_wrapper">
+            <span>Round:</span>
+            <span id="round_number" class="round_number">
+
+            </span>
+        </section>
+
+        <section class="match_wrapper">
+            <div class="output">
+                <div class="player_choice">
+                    <div class="icon">
+
+                    </div>
+                    <div class="text" id="play_choice">
+
+                    </div>
+                </div>
+                <div class="comp_choice">
+                    <div class="icon">
+
+                    </div>
+                    <div class="text" id="comp_choice">
+
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div id="result" class="result_print">
+
+                </div>
+            </div>
+
+            <div class="choice_wrapper">
+                <div id="rock" class="rock">
+                    Rock
+                </div>
+                <div id="paper" class="paper">
+                    Paper
+                </div>
+                <div id="scissors" class="scissors">
+                    Scissors
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="score_wrapper">
+            <div class="player_wrapper">
+                <span> Player Score</span>
+                <span id="player_score" class="player_score">
+
+                </span>
+            </div>
+            <div class="comp_wrapper">
+                </span>
+                Computer Score
+                <span>
+
+                    <span id="comp_score" class="comp_score">
+
+                    </span>
+            </div>
+        </section>
+
+    </div>
 </body>
+
 </html>
-<script src="scripts/rps.js"></script>
+<script src="scripts/script.js"></script>

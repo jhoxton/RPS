@@ -1,10 +1,26 @@
 
-// ROCK PAPER SCISSORS 
+
 const choice = ['rock', 'paper', 'scissors'];
+let gameCount = 1;
 
 let playerWins = 0;
 let computerWins = 0;
-let gameCount = 1;
+
+document.getElementById('round_number').innerHTML = gameCount;
+
+document.getElementById('player_score').innerHTML = playerWins;
+document.getElementById('comp_score').innerHTML = computerWins;
+
+
+let compSelWrap = document.querySelector("#comp_choice")
+compSelWrap.textContent = computerPlay();
+
+
+// ROCK PAPER SCISSORS 
+
+
+playerSelection= 0;
+// let gameCount = 1;
 
 
 function game(){
@@ -19,7 +35,7 @@ function game(){
 
 //Checking player input
 function checkInput(playerSelection) {
-  playerSelection = prompt("Choose rock, paper, or scissors");
+  // playerSelection = prompt("Choose rock, paper, or scissors");
   playerSelection = playerSelection.toLowerCase();
   return playerSelection;
 }
@@ -90,4 +106,4 @@ function playRound(playerSelection, computerSelection) {
 
 
 
-game();
+// game();
