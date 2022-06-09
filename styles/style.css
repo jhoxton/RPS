@@ -1,0 +1,81 @@
+.container {
+    max-width: 1080px;
+    border: 1px red solid;
+    margin: auto;
+}
+
+.heading h1 {
+    text-align: center;
+}
+
+.round_wrapper {
+    text-align: center;
+}
+
+.choice_wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.choice_wrapper h3 {
+    margin: 0;
+    text-align: center;
+}
+
+.game_prompt {
+    text-align: center;
+}
+
+.choice_icon {
+    border: 2px solid red;
+    width: 100px;
+    height: 100px;
+}
+
+.output {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.output .icon {
+    border: 2px solid red;
+    width: 100px;
+    height: 100px;
+}
+
+.player_choice,
+.comp_choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.output .text{
+
+}
+.result{
+    text-align: center;
+}
+.score_wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid green;
+}
+
+
+@media screen and (max-width: 600px) {
+    .choice_icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .choice_wrapper {
+        gap: 15px;
+    }
+    .output .icon{
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
@@ -17,49 +17,74 @@
         </section>
 
         <section class="round_wrapper">
-            <span>Round:</span>
-            <span id="round_number" class="round_number">
+            <h2>
+                <span>Round:</span>
+                <span id="round_number" class="round_number">
 
-            </span>
+                </span>
+            </h2>
+            <div class="game_prompt">
+                <h3 id="game_prompt">
+                    GAME PROMPT
+                </h3>
+            </div>
         </section>
 
         <section class="match_wrapper">
+
+            <div class="choice_wrapper">
+                <div id="rock" class="rock">
+                    <div class="choice_icon">
+
+                    </div>
+                    <h3> Rock</h3>
+                </div>
+                <div id="paper" class="paper">
+                    <div class="choice_icon">
+
+                    </div>
+                    <h3> Paper</h3>
+                </div>
+                <div id="scissors" class="scissors">
+                    <div class="choice_icon">
+
+                    </div>
+                    <h3> Scissors</h3>
+                </div>
+
+            </div>
+         
             <div class="output">
                 <div class="player_choice">
                     <div class="icon">
 
                     </div>
-                    <div class="text" id="play_choice">
-
-                    </div>
+                    <h3>
+                        <div class="text" id="play_choice">
+                            PLAYER CHOICE TEXT
+                        </div>
+                    </h3>
                 </div>
                 <div class="comp_choice">
                     <div class="icon">
 
                     </div>
-                    <div class="text" id="comp_choice">
-
-                    </div>
+                    <h3>
+                        <div class="text" id="comp_choice">
+                            COMPO CHOICE TEXT
+                        </div>
+                    </h3>
                 </div>
             </div>
             <div class="result">
+               <h3>
                 <div id="result" class="result_print">
-
+                    RESULT
                 </div>
+               </h3>
             </div>
 
-            <div class="choice_wrapper">
-                <div id="rock" class="rock">
-                    Rock
-                </div>
-                <div id="paper" class="paper">
-                    Paper
-                </div>
-                <div id="scissors" class="scissors">
-                    Scissors
-                </div>
 
-            </div>
 
         </section>
 
