@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;600&display=swap" rel="stylesheet"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,11 +14,9 @@
 <body>
     <div class="container">
 
-        <section class="heading">
-            <h1>RPS</h1>
-        </section>
-
+        
         <section class="round_wrapper">
+            <h1 class="heading">ROCK, PAPER, SCISSORS</h1>
             <h2>
                 <span>Round:</span>
                 <span id="round_number" class="round_number">
@@ -35,25 +35,32 @@
             <div class="choice_wrapper">
                 <div id="rock" class="rock">
                     <div class="choice_icon">
-
+                        <img src="./icons/rock.svg" alt="">
                     </div>
                     <h3> Rock</h3>
                 </div>
                 <div id="paper" class="paper">
                     <div class="choice_icon">
-
+                        <img src="./icons/paper.svg" alt="">
                     </div>
                     <h3> Paper</h3>
                 </div>
                 <div id="scissors" class="scissors">
                     <div class="choice_icon">
-
+                        <img src="./icons/scissors.svg" alt="">
                     </div>
                     <h3> Scissors</h3>
                 </div>
 
             </div>
          
+          
+
+
+
+        </section>
+
+        <section class="results_wrapper">
             <div class="output">
                 <div class="player_choice">
                     <div class="icon">
@@ -61,7 +68,7 @@
                     </div>
                     <h3>
                         <div class="text" id="play_choice">
-                            PLAYER CHOICE TEXT
+                            <!-- PLAYER CHOICE TEXT -->
                         </div>
                     </h3>
                 </div>
@@ -71,7 +78,7 @@
                     </div>
                     <h3>
                         <div class="text" id="comp_choice">
-                            COMPO CHOICE TEXT
+                            <!-- COMPO CHOICE TEXT -->
                         </div>
                     </h3>
                 </div>
@@ -83,11 +90,7 @@
                 </div>
                </h3>
             </div>
-
-
-
         </section>
-
 
         <section class="score_wrapper">
             <div class="player_wrapper">

@@ -1,11 +1,52 @@
-.container {
-    max-width: 1080px;
-    border: 1px red solid;
-    margin: auto;
+/* Fonts */
+*{
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 400;
+    padding: 0; margin: 0; 
+}
+h1{
+    font-weight: 600;
+    font-size: 40px;
+}
+h2{
+    font-size: 28px;
+}
+h3{
+    font-size: 20px;
+}
+section{
+    padding: 1rem;
+}
+/* Color Guide */
+
+.rd{
+    color: #FF0000 ;
+}
+.wht {
+    color: #DDDDDD;
+}
+.bl{
+    color: #141E61;
+}
+.blk{
+    color: #171717;
+}
+body{
+    /* background: #171717; */
 }
 
-.heading h1 {
+.container {
+    max-width: 1080px;
+    margin: auto;
+    margin-top: 3rem;
+    background-color: #DDDDDD;
+    padding: 2rem;
+}
+
+.heading {
     text-align: center;
+    padding-bottom: 1rem;
+
 }
 
 .round_wrapper {
@@ -25,25 +66,28 @@
 
 .game_prompt {
     text-align: center;
+    padding-top: 20px;
 }
 
 .choice_icon {
-    border: 2px solid red;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    transition: all 0.3s;
+}
+.choice_icon:hover{
+    transform: scale(1.2);
+
 }
 
 .output {
-    border: 1px solid blue;
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
 .output .icon {
-    border: 2px solid red;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 
 .player_choice,
@@ -57,15 +101,27 @@
 }
 .result{
     text-align: center;
+    padding-top: 20px;
 }
 .score_wrapper{
     display: flex;
     justify-content: space-evenly;
-    border: 1px solid green;
+    flex-direction: row;
+}
+.comp_wrapper, .player_wrapper{
+    font-size: 18px;
 }
 
 
 @media screen and (max-width: 600px) {
+    h1{
+        font-size: 30px;
+    }
+    .container {
+        margin-right: 1rem;
+        margin-left: 1rem;
+        padding: 0;
+    }
     .choice_icon {
         width: 60px;
         height: 60px;
@@ -77,5 +133,8 @@
     .output .icon{
         width: 60px;
         height: 60px;
+    }
+    .score_wrapper{
+        flex-direction: column;
     }
 }
