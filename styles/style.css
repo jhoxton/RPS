@@ -2,6 +2,8 @@
 *{
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 400;
+    background-color: #DDDDDD;
+
     padding: 0; margin: 0; 
 }
 h1{
@@ -38,8 +40,6 @@ body{
 .container {
     max-width: 1080px;
     margin: auto;
-    margin-top: 3rem;
-    background-color: #DDDDDD;
     padding: 2rem;
 }
 
@@ -73,9 +73,14 @@ body{
     width: 150px;
     height: 150px;
     transition: all 0.3s;
+    padding-top: 10px;
+    border: 1px solid #141E61;
+}
+.choice_icon:active{
+    border: 1px solid #171717;
 }
 .choice_icon:hover{
-    transform: scale(1.2);
+    border: 1px solid #FF0000;
 }
 
 /* @keyframes fadeIn {
@@ -120,7 +125,9 @@ body{
 .comp_wrapper, .player_wrapper{
     font-size: 18px;
 }
-
+#reload:hover{
+    cursor: pointer;
+}
 
 @media screen and (max-width: 600px) {
     h1{

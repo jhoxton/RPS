@@ -2,8 +2,8 @@
 const choice = ['Rock', 'Paper', 'Scissors'];
 
 let playerWins = 0;
-let computerWins = 0;
-let gameCount = 0;
+let compWins = 0;
+
 
 let playerSelection;
 let compSelection;
@@ -33,13 +33,18 @@ scissorsImg.src = "./icons/scissors.svg";
 //Game prompts and results
 let promt = document.querySelector("#game_prompt");
 promt.innerHTML = "Make a selection to play.";
-let result = document.querySelector("#result");
 
+let gameCount = 1;
+let round_number = document.querySelector("#round_number");
+round_number.innerHTML = gameCount;
+
+
+let result = document.querySelector("#result");
 let compScoreOutput = document.querySelector("#comp_score");
 let playerScoreOutput = document.querySelector("#player_score");
 
 
-compScoreOutput.innerHTML = computerWins;
+compScoreOutput.innerHTML = compWins;
 playerScoreOutput.innerHTML = playerWins;
 
 
@@ -51,13 +56,13 @@ function updateBoard() {
 
 
     printResults(playerSelection, compSelection);
-    compScoreOutput.innerHTML = computerWins;
+    compScoreOutput.innerHTML = compWins;
     playerScoreOutput.innerHTML = playerWins;
 
 
 
 
-    promt.innerHTML = "Make a selection to play!";
+    promt.innerHTML = "Make a selection to play";
 }
 
 function printResults(playerSelection, compSelection) {
@@ -81,7 +86,7 @@ function printResults(playerSelection, compSelection) {
 
     }
 
-    console.log("Comp: ", compSelection);
+    // console.log("Comp: ", compSelection);
     while (compChoiceIcon.hasChildNodes()) { //This removes the last image that was there
         compChoiceIcon.removeChild(compChoiceIcon.lastChild);
     }
@@ -106,7 +111,12 @@ function updateCompSelection() {
 
 //Sets player choice, then runs the game
 function updatePlayerChoice(input) {
+    round_number.innerHTML = gameCount;
     if (gameCount != 5) {
+
+
+    // if ((compWins != 5) || (playerWins != 5)) {
+
         if (input === "Rock") {
             playerSelection = "Rock";
         } else if (input === "Paper") {
@@ -117,28 +127,68 @@ function updatePlayerChoice(input) {
         gameCount++;
         compSelection = updateCompSelection(); //Random comp choice
         playRound(playerSelection, compSelection); //Runs the game
+
     } else {
-        endGame(playerWins, computerWins);
+        endGame(playerWins, compWins);
     }
 }
 
 function playRound(playerSelection, compSelection) {
 
-    // console.log("Player: ", playerSelection);
-    // console.log("Comp: ", compSelection);
-
-
+    if(playerSelection == "Paper" && compSelection == 'Rock'){
+        result.innerHTML = "You win, Paper beats Rock";
+        playerWins ++;
+      } 
+      else if (playerSelection == "Scissors" && compSelection == 'Paper'){
+        result.innerHTML = "You win, Scissors beats Rock";
+        playerWins ++;
+    
+      }
+      else if (playerSelection == "Rock" && compSelection == 'Scissors'){
+        result.innerHTML = "You win, Rock beats Scissors ";
+        playerWins ++;
+    
+      }
+      else if(playerSelection == "Rock" && compSelection =='Paper'){
+        result.innerHTML = "You lose, Paper beats Rock";
+        compWins ++;
+      } 
+      else if (playerSelection == "Paper" && compSelection == 'Scissors'){
+        result.innerHTML = "You lose, Scissors beats Paper ";
+        compWins ++;
+      }
+      else if (playerSelection == "Scissors" && compSelection == 'Rock'){
+        result.innerHTML = "You lose, Rock beats Scissors ";
+        compWins ++;
+      }
+      else if(playerSelection == "Scissors" && compSelection == 'Scissors'){
+        result.innerHTML = "Draw: Scissors v Scissors";
+      } 
+      else if (playerSelection == "Rock" && compSelection == 'Rock'){
+        result.innerHTML =  "Draw: Rock v Rock";
+      }
+      else if (playerSelection == "Paper" && compSelection == 'Paper'){
+        result.innerHTML = "Draw: Paper v Paper";
+      }
     updateBoard(playerSelection, compSelection);
 }
 
 function endGame() {
-    promt.innerHTML = "Game over. Click here to replay";
 
-    if (playerWins === 5) {
-        result.innerHTML = "You won";
-
-    } else if (computerWins === 5) {
-        result.innerHTML = "You lost";
-
+    if (playerWins > compWins) {
+        result.innerHTML = "You won the game!";
+        promt.innerHTML = "<span id='reload'> Game over. Click here to replay</span>";
+       reload();
+    } else if (compWins > playerWins) {
+        result.innerHTML = "You lost the game!";
+        promt.innerHTML = "<span id='reload'> Game over. Click here to replay</span>";
+       reload();
     }
+}
+function reload () {
+    const refresh = document.querySelector("#reload");
+    refresh.addEventListener('click', () => {
+        window.location.reload();
+    
+    }) 
 }
