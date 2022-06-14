@@ -76,9 +76,18 @@ body{
 }
 .choice_icon:hover{
     transform: scale(1.2);
-
 }
 
+/* @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  } */
+.output_icon{
+    width: 150px;
+    height: 150px;
+    transition: all 0.3s;
+    /* animation: fadeIn 3s; */
+}
 .output {
     display: flex;
     justify-content: center;
@@ -126,7 +135,10 @@ body{
         width: 60px;
         height: 60px;
     }
-
+    .output_icon{
+        width: 60px;
+        height: 60px; 
+    }
     .choice_wrapper {
         gap: 15px;
     }
