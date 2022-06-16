@@ -33,9 +33,7 @@ section{
 .blk{
     color: #171717;
 }
-body{
-    /* background: #171717; */
-}
+
 
 .container {
     max-width: 1080px;
@@ -110,12 +108,22 @@ body{
     flex-direction: column;
     align-items: center;
 }
-.output .text{
-
+.game_over{
+    pointer-events: none;
+    opacity: 0.3;
+    transition: all 0.5s;
 }
 .result{
     text-align: center;
     padding-top: 20px;
+}
+.result_prompt{
+    color: #FF0000;
+}
+.reset_prompt{
+    color: #FF0000;
+    text-decoration: underline;
+    transition: all 0.5s;
 }
 .score_wrapper{
     display: flex;

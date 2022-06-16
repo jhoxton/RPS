@@ -16,6 +16,10 @@ document.getElementById("rock").addEventListener("click", () => updatePlayerChoi
 document.getElementById("paper").addEventListener("click", () => updatePlayerChoice('Paper'));
 document.getElementById("scissors").addEventListener("click", () => updatePlayerChoice('Scissors'));
 
+
+
+
+
 let rockImg = document.createElement("img");
 let paperImg = document.createElement("img");
 let scissorsImg = document.createElement("img");
@@ -57,7 +61,11 @@ function updateBoard() {
     compScoreOutput.innerHTML = compWins;
     playerScoreOutput.innerHTML = playerWins;
 
-    if((playerWins == 5) || (compWins == 5)){ //Check score after updateing board
+    if ((playerWins == 5) || (compWins == 5)) { //Check score after updateing board
+        document.getElementById('rock').classList.add('game_over');
+        document.getElementById('paper').classList.add('game_over');
+        document.getElementById('scissors').classList.add('game_over');
+
         endGame();
     } else {
         promt.innerHTML = "Make a selection to play";
@@ -111,27 +119,16 @@ function updateCompSelection() {
 function updatePlayerChoice(input) {
     round_number.innerHTML = gameCount;
 
-    // if (compWins === 5) {
-    //     console.log("Comp wins");
-    //     endGame();
-    // } else if (playerWins === 5) {
-    //     console.log("Player wins");
-    //     endGame();
-    // }
-
-    // else {
-        if (input === "Rock") {
-            playerSelection = "Rock";
-        } else if (input === "Paper") {
-            playerSelection = "Paper";
-        } else if (input === "Scissors") {
-            playerSelection = "Scissors";
-        }
-        gameCount++;
-        compSelection = updateCompSelection(); //Random comp choice
-        playRound(playerSelection, compSelection); //Runs the game
-
-    // }
+    if (input === "Rock") {
+        playerSelection = "Rock";
+    } else if (input === "Paper") {
+        playerSelection = "Paper";
+    } else if (input === "Scissors") {
+        playerSelection = "Scissors";
+    }
+    gameCount++;
+    compSelection = updateCompSelection(); //Random comp choice
+    playRound(playerSelection, compSelection); //Runs the game
 }
 
 function playRound(playerSelection, compSelection) {
@@ -172,17 +169,20 @@ function playRound(playerSelection, compSelection) {
         result.innerHTML = "Draw: Paper v Paper";
     }
     updateBoard(playerSelection, compSelection);
-    
+
 }
 
+
 function endGame() {
+
     if (playerWins > compWins) {
-        result.innerHTML = "You won the game!";
-        promt.innerHTML = "<span id='reload'> Game over. Click here to replay</span>";
+        result.innerHTML = "<span class='result_prompt'>You won the game.</span>";
+        promt.innerHTML = "<span id='reload' class='reset_prompt'> Game over. Click here to replay</span>";
         reload();
     } else if (compWins > playerWins) {
-        result.innerHTML = "You lost the game!";
-        promt.innerHTML = "<span id='reload'> Game over. Click here to replay</span>";
+        result.innerHTML = "<span class='result_prompt'>You lost the game.</span>";
+        promt.innerHTML = "<span id='reload' class='reset_prompt'> Game over. Click here to replay</span>";
+        
         reload();
     }
 }
